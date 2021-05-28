@@ -24,7 +24,7 @@ class LaravelPsrHttpServiceProvider extends ServiceProvider
     {
         $this->publishes([
             $this->getConfigPath() => config_path('symfony-http-client.php'),
-        ], 'config');
+        ], 'symfony-http-client');
 
         $this->mergeConfigFrom(
             $this->getConfigPath(),
