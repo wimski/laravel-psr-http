@@ -32,5 +32,12 @@
             "Wimski\\LaravelPsrHttp\\": "src"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Wimski\\LaravelPsrHttp\\Providers\\LaravelPsrHttpServiceProvider"
+            ]
+        }
+    },
     "minimum-stability": "dev"
 }
