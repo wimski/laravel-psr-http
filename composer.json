@@ -1,0 +1,36 @@
+{
+    "name": "wimski/laravel-psr-http",
+    "type": "library",
+    "description": "PSR HTTP setup for Laravel",
+    "keywords": [
+        "laravel",
+        "psr",
+        "http"
+    ],
+    "homepage": "https://github.com/wimski/laravel-psr-http",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wimski",
+            "email": "thatonedudewimski@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4 || ^8.0",
+        "laravel/framework": "^8.0",
+        "nyholm/psr7": "^1.4",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0",
+        "symfony/http-client": "^5.2"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Wimski\\LaravelPsrHttp\\": "src"
+        }
+    },
+    "minimum-stability": "dev"
+}
