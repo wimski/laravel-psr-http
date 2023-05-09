@@ -1,43 +1,64 @@
 {
     "name": "wimski/laravel-psr-http",
-    "type": "library",
     "description": "PSR HTTP setup for Laravel",
+    "license": "MIT",
+    "type": "library",
     "keywords": [
+        "wimski",
         "laravel",
         "psr",
         "http"
     ],
-    "homepage": "https://github.com/wimski/laravel-psr-http",
-    "license": "MIT",
     "authors": [
         {
-            "name": "Wimski",
-            "email": "thatonedudewimski@gmail.com",
+            "name": "Wim Reckman",
             "role": "Developer"
         }
     ],
+    "homepage": "https://github.com/wimski/laravel-psr-http",
     "require": {
-        "php": "^7.4 || ^8.0",
-        "laravel/framework": "^8.0 || ^9.0",
-        "nyholm/psr7": "^1.4",
+        "php": "^8.0",
+        "illuminate/support": "^9.0 || ^10.0",
+        "php-http/discovery": "^1.11",
         "psr/http-client": "^1.0",
         "psr/http-factory": "^1.0",
-        "symfony/http-client": "^5.2 || ^6.0"
+        "psr/http-message": "^1.1 || ^2.0"
     },
-    "config": {
-        "sort-packages": true
+    "require-dev": {
+        "nunomaduro/larastan": "^2.0",
+        "nyholm/psr7": "^1.0",
+        "orchestra/testbench": "^7.0 || ^8.0",
+        "php-http/guzzle7-adapter": "^1.0",
+        "phpstan/phpstan-phpunit": "^1.0",
+        "phpunit/phpunit": "^9.0"
     },
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "Wimski\\LaravelPsrHttp\\": "src"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Wimski\\LaravelPsrHttp\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
-                "Wimski\\LaravelPsrHttp\\Providers\\LaravelPsrHttpServiceProvider"
+                "Wimski\\LaravelPsrHttp\\Providers\\PsrHttpServiceProvider"
             ]
         }
     },
-    "minimum-stability": "stable"
+    "scripts": {
+        "analyze": "@php vendor/phpstan/phpstan/phpstan analyse --memory-limit 1G",
+        "coverage": "@php vendor/phpunit/phpunit/phpunit",
+        "test": "@php vendor/phpunit/phpunit/phpunit --no-coverage"
+    }
 }

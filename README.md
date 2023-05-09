@@ -1,21 +1,16 @@
+[![Latest Stable Version](http://poser.pugx.org/wimski/laravel-psr-http/v)](https://packagist.org/packages/wimski/laravel-psr-http)
+[![Coverage Status](https://coveralls.io/repos/github/wimski/laravel-psr-http/badge.svg?branch=master)](https://coveralls.io/github/wimski/laravel-psr-http?branch=master)
+[![PHPUnit](https://github.com/wimski/laravel-psr-http/actions/workflows/phpunit.yml/badge.svg)](https://github.com/wimski/laravel-psr-http/actions/workflows/phpunit.yml)
+[![PHPStan](https://github.com/wimski/laravel-psr-http/actions/workflows/phpstan.yml/badge.svg)](https://github.com/wimski/laravel-psr-http/actions/workflows/phpstan.yml)
+
 # Laravel PSR HTTP
 
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/wimski/laravel-psr-http.svg?style=flat-square)](https://packagist.org/packages/wimski/laravel-psr-http)
-[![Total Downloads](https://img.shields.io/packagist/dt/wimski/laravel-psr-http.svg?style=flat-square)](https://packagist.org/packages/wimski/laravel-psr-http)
-
-This package provides Laravel bindings to make PSR HTTP requests using the [Symfony HTTP Client](https://symfony.com/doc/current/http_client.html) for the PSR-18 client
-and [Nyholm's PSR-7](https://github.com/Nyholm/psr7) package for the PSR-17 factories.
+This package provides Laravel bindings to make PSR HTTP requests using [discovery](https://github.com/php-http/discovery).
 
 ## Install
 
 ```bash
 composer require wimski/laravel-psr-http
-```
-
-Optionally publish the config file to adjust the default options for the [Symfony HTTP Client](https://github.com/symfony/contracts/blob/main/HttpClient/HttpClientInterface.php).
-```bash
-php artisan vendor:publish --tag=symfony-http-client
 ```
 
 ## Usage example
@@ -36,22 +31,13 @@ use Psr\Http\Message\StreamFactoryInterface;
 class TestCommand extends Command
 {
     protected $signature = 'http:test';
-
     protected $description = 'Test the HTTP client';
 
-    protected ClientInterface $httpClient;
-    protected RequestFactoryInterface $requestFactory;
-    protected StreamFactoryInterface $streamFactory;
-
     public function __construct(
-        ClientInterface $httpClient,
-        RequestFactoryInterface $requestFactory,
-        StreamFactoryInterface $streamFactory
+        protected ClientInterface $httpClient,
+        protected RequestFactoryInterface $requestFactory,
+        protected StreamFactoryInterface $streamFactory,
     ) {
-        $this->httpClient     = $httpClient;
-        $this->requestFactory = $requestFactory;
-        $this->streamFactory  = $streamFactory;
-
         parent::__construct();
     }
 
