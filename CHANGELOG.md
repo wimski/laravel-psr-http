@@ -9,7 +9,7 @@ This changelog is initialized in release 1.0.0
 
 ## [Unreleased]
 
-## [v2.0.0] - 2023-xx-xx
+## [v2.0.0] - 2023-05-09
 
 ### Changed
 * Complete refactor using [discovery](https://github.com/php-http/discovery)
