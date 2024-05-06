@@ -9,6 +9,11 @@ This changelog is initialized in release 1.0.0
 
 ## [Unreleased]
 
+## [v2.1.0] - 2024-05-06
+
+### Added
+* Laravel 11 support
+
 ## [v2.0.0] - 2023-05-09
 
 ### Changed
@@ -29,7 +34,8 @@ This changelog is initialized in release 1.0.0
 ### Changed
 * Update config publish tag
 
-[Unreleased]: https://github.com/wimski/laravel-psr-http/compare/v2.0.0...master
+[Unreleased]: https://github.com/wimski/laravel-psr-http/compare/v2.1.0...master
+[v2.1.0]: https://github.com/wimski/laravel-psr-http/compare/v2.0.0...v2.1.0
 [v2.0.0]: https://github.com/wimski/laravel-psr-http/compare/v1.1.0...v2.0.0
 [v1.1.0]: https://github.com/wimski/laravel-psr-http/compare/v1.0.2...v1.1.0
 [v1.0.2]: https://github.com/wimski/laravel-psr-http/compare/v1.0.1...v1.0.2
