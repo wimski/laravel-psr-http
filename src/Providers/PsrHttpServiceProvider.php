@@ -30,50 +30,57 @@ class PsrHttpServiceProvider extends ServiceProvider
 
     protected function registerClient(): void
     {
-        $this->app->singleton(ClientInterface::class, function (): ClientInterface {
-            return Psr18ClientDiscovery::find();
-        });
+        $this->app->singleton(
+            ClientInterface::class,
+            fn (): ClientInterface => Psr18ClientDiscovery::find(),
+        );
     }
 
     protected function registerUriFactory(): void
     {
-        $this->app->singleton(UriFactoryInterface::class, function (): UriFactoryInterface {
-            return Psr17FactoryDiscovery::findUriFactory();
-        });
+        $this->app->singleton(
+            UriFactoryInterface::class,
+            fn (): UriFactoryInterface => Psr17FactoryDiscovery::findUriFactory(),
+        );
     }
 
     protected function registerStreamFactory(): void
     {
-        $this->app->singleton(StreamFactoryInterface::class, function (): StreamFactoryInterface {
-            return Psr17FactoryDiscovery::findStreamFactory();
-        });
+        $this->app->singleton(
+            StreamFactoryInterface::class,
+            fn (): StreamFactoryInterface => Psr17FactoryDiscovery::findStreamFactory(),
+        );
     }
 
     protected function registerUploadedFileFactory(): void
     {
-        $this->app->singleton(UploadedFileFactoryInterface::class, function (): UploadedFileFactoryInterface {
-            return Psr17FactoryDiscovery::findUploadedFileFactory();
-        });
+        $this->app->singleton(
+            UploadedFileFactoryInterface::class,
+            fn (): UploadedFileFactoryInterface => Psr17FactoryDiscovery::findUploadedFileFactory(),
+        );
     }
 
     protected function registerRequestFactory(): void
     {
-        $this->app->singleton(RequestFactoryInterface::class, function (): RequestFactoryInterface {
-            return Psr17FactoryDiscovery::findRequestFactory();
-        });
+        $this->app->singleton(
+            RequestFactoryInterface::class,
+            fn (): RequestFactoryInterface => Psr17FactoryDiscovery::findRequestFactory(),
+        );
     }
 
     protected function registerServerRequestFactory(): void
     {
-        $this->app->singleton(ServerRequestFactoryInterface::class, function (): ServerRequestFactoryInterface {
-            return Psr17FactoryDiscovery::findServerRequestFactory();
-        });
+        $this->app->singleton(
+            ServerRequestFactoryInterface::class,
+            fn (): ServerRequestFactoryInterface => Psr17FactoryDiscovery::findServerRequestFactory(),
+        );
     }
 
     protected function registerResponseFactory(): void
     {
-        $this->app->singleton(ResponseFactoryInterface::class, function (): ResponseFactoryInterface {
-            return Psr17FactoryDiscovery::findResponseFactory();
-        });
+        $this->app->singleton(
+            ResponseFactoryInterface::class,
+            fn (): ResponseFactoryInterface => Psr17FactoryDiscovery::findResponseFactory(),
+        );
     }
 }
