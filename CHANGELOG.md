@@ -45,7 +45,8 @@ This changelog is initialized in release 1.0.0
 ### Changed
 * Update config publish tag
 
-[Unreleased]: https://github.com/wimski/laravel-psr-http/compare/v2.1.0...master
+[Unreleased]: https://github.com/wimski/laravel-psr-http/compare/v3.0.0...master
+[v3.0.0]: https://github.com/wimski/laravel-psr-http/compare/v2.1.0...v3.0.0
 [v2.1.0]: https://github.com/wimski/laravel-psr-http/compare/v2.0.0...v2.1.0
 [v2.0.0]: https://github.com/wimski/laravel-psr-http/compare/v1.1.0...v2.0.0
 [v1.1.0]: https://github.com/wimski/laravel-psr-http/compare/v1.0.2...v1.1.0
