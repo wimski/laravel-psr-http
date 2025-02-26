@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Wimski\LaravelPsrHttp\Tests;
 
 use Orchestra\Testbench\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\ResponseFactoryInterface;
@@ -23,9 +24,7 @@ class PsrHttpServiceProviderTest extends TestCase
         ];
     }
 
-    /**
-     * @test
-     */
+    #[Test]
     public function it_registers_http_psr_services(): void
     {
         $client = $this->app?->make(ClientInterface::class);
